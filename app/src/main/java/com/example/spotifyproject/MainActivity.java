@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent start = new Intent(getApplicationContext(), ScrollPage.class);
+                Intent start = new Intent(getApplicationContext(), SplashActivity.class);
                 startActivity(start);
             }
         });
