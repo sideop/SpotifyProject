@@ -30,8 +30,10 @@ public class UserService {
 
     public void get(final VolleyCallBack callBack) {
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(ENDPOINT, null, response -> {
-            Gson gson = new Gson();
-            user = gson.fromJson(response.toString(), User.class);
+            //Gson gson = new Gson();
+            String n = response.optString("display_name");
+            String id = response.optString("id");
+            user = new User(n, id);
             callBack.onSuccess();
         }, error -> get(() -> {
 

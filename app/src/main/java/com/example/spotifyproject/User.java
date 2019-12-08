@@ -8,5 +8,10 @@ public class User {
     public String email;
     public String id;
 
+    public User(String name, String id) {
+        display_name = name;
+        this.id = id;
+    }
+
 
 }

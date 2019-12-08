@@ -39,7 +39,7 @@ public class ArtistService {
     }
 
     public ArrayList<Artist> getTopArtists(final VolleyCallBack callBack) {
-        String endpoint = "https://api.spotify.com/v1/me/top/artists";
+        String endpoint = "https://api.spotify.com/v1/me/top/artists?time_range=long_term";
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.GET, endpoint, null, response -> {
                     Gson gson = new Gson();
@@ -47,8 +47,9 @@ public class ArtistService {
                     for (int n = 0; n < jsonArray.length(); n++) {
                         try {
                             JSONObject object = jsonArray.getJSONObject(n);
-                            object = object.optJSONObject("artist");
-                            Artist artist = gson.fromJson(object.toString(), Artist.class);
+                            String name = object.optString("name");
+                            String id = object.optString("id");
+                            Artist artist = new Artist(name, id);
                             artists.add(artist);
                         } catch (JSONException e) {
                             e.printStackTrace();

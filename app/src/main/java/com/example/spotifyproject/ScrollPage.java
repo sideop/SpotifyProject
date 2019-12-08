@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import com.example.spotifyproject.Connectors.ArtistService;
 import com.example.spotifyproject.Connectors.SongService;
+import com.example.spotifyproject.Connectors.UserService;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -22,12 +23,12 @@ public class ScrollPage extends AppCompatActivity {
 
     private TextView userView;
     private TextView songView;
-    private TextView tempArtist;
+    private TextView artistView;
     private Song song;
     private Artist artist;
 
     private SongService songService;
-    private ArrayList<Song> recentlyPlayedTracks;
+    private ArrayList<Song> topTracks;
     private ArtistService artistService;
     private ArrayList<Artist> topArtists;
 
@@ -37,47 +38,48 @@ public class ScrollPage extends AppCompatActivity {
         setContentView(R.layout.activity_scroll_page);
 
         songService = new SongService(getApplicationContext());
-        userView = findViewById(R.id.artist1);
-        songView = findViewById(R.id.song1);
-
-        tempArtist = findViewById(R.id.artist2);
-
+        artistService = new ArtistService(getApplicationContext());
+        userView = findViewById(R.id.userProfile);
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("SPOTIFY", 0);
+        String username = sharedPreferences.getString("userid", "No User");
+        userView.setText(username + "'s profile");
 
-        userView.setText(sharedPreferences.getString("userid", "No User"));
 
-        //getTracks();
+        songView = findViewById(R.id.song1);
+        artistView = findViewById(R.id.artist1);
+        getTracks();
         getArtists();
+
     }
 
 
     private void getTracks() {
         songService.getTopSongsCall(() -> {
-            recentlyPlayedTracks = songService.getTopSongs();
+            topTracks = songService.getTopSongs();
             updateSong();
         });
     }
 
     private void updateSong() {
-        if (recentlyPlayedTracks.size() > 0) {
-            songView.setText(recentlyPlayedTracks.get(0).getName());
+        if (topTracks.size() > 0) {
+            songView.setText(topTracks.get(0).getName());
             songView.setVisibility(View.VISIBLE);
-            song = recentlyPlayedTracks.get(0);
+            song = topTracks.get(0);
         }
     }
 
     private void getArtists() {
         artistService.getTopArtists(() -> {
             topArtists = artistService.getArtists();
-            updateArtists();
+            updateArtist();
         });
     }
 
-    private void updateArtists() {
+    private void updateArtist() {
         if (topArtists.size() > 0) {
-            tempArtist.setText(topArtists.get(0).getName());
-
+            artistView.setText(topArtists.get(0).getName());
+            artist = topArtists.get(0);
         }
     }
 
