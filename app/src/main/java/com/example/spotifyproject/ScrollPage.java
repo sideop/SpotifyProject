@@ -19,11 +19,20 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ * THIS CLASS DISPLAYS USERS TOP SONGS AND ARTISTS IN AN INFLATED VIEW
+ */
 public class ScrollPage extends AppCompatActivity {
 
     private TextView userView;
+
+
+    /**
+     * current views, need to be reassigned and become inflated views. see below.
+     */
     private TextView songView;
     private TextView artistView;
+
     private Song song;
     private Artist artist;
 
@@ -39,6 +48,11 @@ public class ScrollPage extends AppCompatActivity {
 
         songService = new SongService(getApplicationContext());
         artistService = new ArtistService(getApplicationContext());
+
+
+        /**
+         * displays username.
+         */
         userView = findViewById(R.id.userProfile);
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("SPOTIFY", 0);
@@ -46,8 +60,15 @@ public class ScrollPage extends AppCompatActivity {
         userView.setText(username + "'s profile");
 
 
-        songView = findViewById(R.id.song1);
-        artistView = findViewById(R.id.artist1);
+        //songView = findViewById(R.id.song1);
+        //artistView = findViewById(R.id.artist1);
+
+        /** make inflator view and assign each song and artist, which are in ArrayLists
+         * the arraylists names are declared above and filled when getTracks and getArtists is called
+         * just put the first 5 songs and artists for now.
+         * YOUR CODE HERE
+         */
+
         getTracks();
         getArtists();
 
