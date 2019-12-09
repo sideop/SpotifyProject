@@ -33,6 +33,7 @@ public class ScrollPage extends AppCompatActivity {
     private TextView songView;
     private TextView artistView;
 
+
     private Song song;
     private Artist artist;
 
@@ -60,6 +61,10 @@ public class ScrollPage extends AppCompatActivity {
         userView.setText(username + "'s profile");
 
 
+        TextView userName = findViewById(R.id.username);
+        userName.setText(username);
+
+
         //songView = findViewById(R.id.song1);
         //artistView = findViewById(R.id.artist1);
 
@@ -71,6 +76,29 @@ public class ScrollPage extends AppCompatActivity {
 
         getTracks();
         getArtists();
+
+        TextView song1 = findViewById(R.id.song1);
+        song1.setText(topTracks.get(0).getName());
+        TextView song2 = findViewById(R.id.song2);
+        song1.setText(topTracks.get(1).getName());
+        TextView song3 = findViewById(R.id.song3);
+        song1.setText(topTracks.get(2).getName());
+        TextView song4 = findViewById(R.id.song4);
+        song1.setText(topTracks.get(3).getName());
+        TextView song5 = findViewById(R.id.song5);
+        song1.setText(topTracks.get(4).getName());
+
+        TextView artist1 = findViewById(R.id.artist1);
+        song1.setText(topArtists.get(0).getName());
+        TextView artist2 = findViewById(R.id.artist2);
+        song1.setText(topArtists.get(1).getName());
+        TextView artist3 = findViewById(R.id.artist3);
+        song1.setText(topArtists.get(2).getName());
+        TextView artist4 = findViewById(R.id.artist4);
+        song1.setText(topArtists.get(3).getName());
+        TextView artist5 = findViewById(R.id.artist5);
+        song1.setText(topArtists.get(4).getName());
+
 
     }
 
