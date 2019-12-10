@@ -10,6 +10,7 @@
     <TextView
         android:id="@+id/userProfile"
         android:layout_width="wrap_content"
+        android:gravity="center"
         android:layout_height="wrap_content" />
 
     <ScrollView
@@ -25,56 +26,67 @@
                 android:id="@+id/userdata"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="USER DATA"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/username"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/topsongs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:lineSpacingExtra="12sp"
                 android:text="TOP SONGS"
+                android:gravity="center"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/song1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:gravity="center"
+                android:lineSpacingExtra="12sp" />
 
             <TextView
                 android:id="@+id/song2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:gravity="center"
+                android:lineSpacingExtra="12sp" />
 
             <TextView
                 android:id="@+id/song3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/song4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/song5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/topartists"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:lineSpacingExtra="12sp"
+                android:gravity="center"
                 android:text="TOP ARTISTS"
                 android:textStyle="bold" />
 
@@ -82,30 +94,40 @@
                 android:id="@+id/artist1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/artist2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/artist3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/artist4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/artist5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="12sp"
                 android:text="TextView" />
 
         </LinearLayout>

@@ -30,8 +30,8 @@ public class ScrollPage extends AppCompatActivity {
     /**
      * current views, need to be reassigned and become inflated views. see below.
      */
-    private TextView songView;
-    private TextView artistView;
+    //private TextView songView = findViewById(R.id.song1);
+    //private TextView artistView;
 
 
     private Song song;
@@ -61,8 +61,8 @@ public class ScrollPage extends AppCompatActivity {
         userView.setText(username + "'s profile");
 
 
-        TextView userName = findViewById(R.id.username);
-        userName.setText(username);
+        //TextView userName = findViewById(R.id.username);
+        //userName.setText(username);
 
 
         //songView = findViewById(R.id.song1);
@@ -77,29 +77,6 @@ public class ScrollPage extends AppCompatActivity {
         getTracks();
         getArtists();
 
-        TextView song1 = findViewById(R.id.song1);
-        song1.setText(topTracks.get(0).getName());
-        TextView song2 = findViewById(R.id.song2);
-        song1.setText(topTracks.get(1).getName());
-        TextView song3 = findViewById(R.id.song3);
-        song1.setText(topTracks.get(2).getName());
-        TextView song4 = findViewById(R.id.song4);
-        song1.setText(topTracks.get(3).getName());
-        TextView song5 = findViewById(R.id.song5);
-        song1.setText(topTracks.get(4).getName());
-
-        TextView artist1 = findViewById(R.id.artist1);
-        song1.setText(topArtists.get(0).getName());
-        TextView artist2 = findViewById(R.id.artist2);
-        song1.setText(topArtists.get(1).getName());
-        TextView artist3 = findViewById(R.id.artist3);
-        song1.setText(topArtists.get(2).getName());
-        TextView artist4 = findViewById(R.id.artist4);
-        song1.setText(topArtists.get(3).getName());
-        TextView artist5 = findViewById(R.id.artist5);
-        song1.setText(topArtists.get(4).getName());
-
-
     }
 
 
@@ -111,10 +88,23 @@ public class ScrollPage extends AppCompatActivity {
     }
 
     private void updateSong() {
-        if (topTracks.size() > 0) {
-            songView.setText(topTracks.get(0).getName());
-            songView.setVisibility(View.VISIBLE);
+        if (topTracks.size() > 4) {
+            TextView song1 = findViewById(R.id.song1);
+            song1.setText(topTracks.get(0).getName());
             song = topTracks.get(0);
+            TextView song2 = findViewById(R.id.song2);
+            song2.setText(topTracks.get(1).getName());
+            song = topTracks.get(1);
+            TextView song3 = findViewById(R.id.song3);
+            song3.setText(topTracks.get(2).getName());
+            song = topTracks.get(2);
+            TextView song4 = findViewById(R.id.song4);
+            song4.setText(topTracks.get(3).getName());
+            song = topTracks.get(3);
+            TextView song5 = findViewById(R.id.song5);
+            song5.setText(topTracks.get(4).getName());
+            song = topTracks.get(4);
+
         }
     }
 
@@ -126,9 +116,22 @@ public class ScrollPage extends AppCompatActivity {
     }
 
     private void updateArtist() {
-        if (topArtists.size() > 0) {
-            artistView.setText(topArtists.get(0).getName());
+        if (topArtists.size() > 4) {
+            TextView artist1 = findViewById(R.id.artist1);
+            artist1.setText(topArtists.get(0).getName());
             artist = topArtists.get(0);
+            TextView artist2 = findViewById(R.id.artist2);
+            artist2.setText(topArtists.get(1).getName());
+            artist = topArtists.get(1);
+            TextView artist3 = findViewById(R.id.artist3);
+            artist3.setText(topArtists.get(2).getName());
+            artist = topArtists.get(2);
+            TextView artist4 = findViewById(R.id.artist4);
+            artist4.setText(topArtists.get(3).getName());
+            artist = topArtists.get(3);
+            TextView artist5 = findViewById(R.id.artist5);
+            artist5.setText(topArtists.get(4).getName());
+            artist = topArtists.get(4);
         }
     }
 
