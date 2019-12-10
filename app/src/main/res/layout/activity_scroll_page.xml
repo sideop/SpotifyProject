@@ -38,9 +38,9 @@
                 android:id="@+id/topsongs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:lineSpacingExtra="12sp"
-                android:text="TOP SONGS"
                 android:gravity="center"
+                android:lineSpacingExtra="12sp"
+                android:text="TOP SONGS OF ALL TIME"
                 android:textStyle="bold" />
 
             <TextView
@@ -85,9 +85,9 @@
                 android:id="@+id/topartists"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:lineSpacingExtra="12sp"
                 android:gravity="center"
-                android:text="TOP ARTISTS"
+                android:lineSpacingExtra="12sp"
+                android:text="TOP ARTISTS OF ALL TIME"
                 android:textStyle="bold" />
 
             <TextView
