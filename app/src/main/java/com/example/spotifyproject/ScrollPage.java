@@ -58,7 +58,7 @@ public class ScrollPage extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("SPOTIFY", 0);
         String username = sharedPreferences.getString("userid", "No User");
-        userView.setText(username + "'s profile");
+        userView.setText("  " + username + "'s profile");
 
 
         //TextView userName = findViewById(R.id.username);
